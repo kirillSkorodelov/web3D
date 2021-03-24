@@ -13,9 +13,9 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js'></script>
   <script src='https://threejs.org/examples/js/controls/TrackballControls.js'></script>
   <script src='https://mamboleoo.be/learnThree/demos/OBJLoader.js'></script>
-
-  <script>
-
+  <script src='./foxThreejs/low-poly-fox-by-pixelmannen.js'></script>
+ 
+<script>
   /**
   * Generate a scene object with a background color
   **/
@@ -98,8 +98,8 @@
 
   function loadModel() {
     var loader = new THREE.OBJLoader();
-    //loader.load('fox/low-poly-fox-by-pixelmannen.json', function ( object ) {
-    loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/banana.obj', function ( object ) {
+    loader.load('fox/low-poly-fox-by-pixelmannen.obj', function ( object ) {
+    //loader.load( model, function ( object ) {
       //object.rotation.z = Math.PI/2;
       object.rotation.x = Math.PI/2;
 	    object.position.y = -200;
