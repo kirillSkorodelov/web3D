@@ -98,10 +98,10 @@
 
   function loadModel() {
     var loader = new THREE.OBJLoader();
-    loader.load('fox/low-poly-fox-by-pixelmannen.json', function ( object ) {
-    //loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/banana.obj', function ( object ) {
+    //loader.load('fox/low-poly-fox-by-pixelmannen.json', function ( object ) {
+    loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/banana.obj', function ( object ) {
       //object.rotation.z = Math.PI/2;
-      //object.rotation.x = Math.PI/2;
+      object.rotation.x = Math.PI/2;
 	    object.position.y = -200;
 	    object.position.z = 100;
       object.position.x = -150;
