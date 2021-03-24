@@ -101,20 +101,20 @@
     loader.load('foxThreejs/low-poly-fox-by-pixelmannen.json', function ( object ) {
     //loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/banana.obj', function ( object ) {
       //object.rotation.z = Math.PI/2;
-      object.rotation.x = Math.PI/2;
+      object.rotation.x = Math.PI;
 	    object.position.y = -200;
 	    object.position.z = 100;
       object.position.x = -150;
 
-      	//Go through all children of the loaded object and search for a Mesh
-	    object.traverse( function ( child ) {
-		  //This allow us to check if the children is an instance of the Mesh constructor
-		    if(child instanceof THREE.Mesh){
-			    child.material.color = new THREE.Color(0Xffd000);
-			//Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
-		    child.geometry.computeVertexNormals();
-		    }
-	    });
+    // 	//Go through all children of the loaded object and search for a Mesh
+	  // object.traverse( function ( child ) {
+		// //This allow us to check if the children is an instance of the Mesh constructor
+		//   if(child instanceof THREE.Mesh){
+		//	    child.material.color = new THREE.Color(0Xffd000);
+		//	//Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
+		//   child.geometry.computeVertexNormals();
+		//   }
+	  // });
 
 
       scene.add( object );
