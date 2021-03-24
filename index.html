@@ -10,15 +10,21 @@
 
   <h1>Loading...</h1>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>
+  
   <script src='https://threejs.org/examples/js/controls/TrackballControls.js'></script>
-  <script src='https://mamboleoo.be/learnThree/demos/OBJLoader.js'></script>
-  <script src='./foxThreejs/low-poly-fox-by-pixelmannen.js'></script>
+  <!-- <script src='https://mamboleoo.be/learnThree/demos/OBJLoader.js'></script> -->
+
+  <script src="https://cdn.rawgit.com/mrdoob/three.js/r87/examples/js/loaders/OBJLoader.js"></script>
+
  
+
+  
 <script>
   /**
   * Generate a scene object with a background color
   **/
+  console.log(model)
 
   function getScene() {
     var scene = new THREE.Scene();
@@ -93,13 +99,14 @@
   }
 
   /**
-  * Load Nimrud model
+  * Load model
   **/
 
   function loadModel() {
-    var loader = new THREE.OBJLoader();
-    loader.load('fox/low-poly-fox-by-pixelmannen.obj', function ( object ) {
-    //loader.load( model, function ( object ) {
+    //var loader = new THREE.OBJLoader();
+    var loader = new THREE.GLTFLoader();
+    //loader.load('fox/low-poly-fox-by-pixelmannen.obj', function ( object ) {
+      loader.load('fox_gltf/LowPolyFoxbyPixelMannen.gltf', function ( object ) {
       //object.rotation.z = Math.PI/2;
       object.rotation.x = Math.PI/2;
 	    object.position.y = -200;
@@ -121,6 +128,8 @@
       document.querySelector('h1').style.display = 'none';
     } );
   }
+  
+
 
   /**
   * Render!
@@ -138,7 +147,10 @@
   var renderer = getRenderer();
   var controls = getControls(camera, renderer);
 
+  
   loadModel()
+
+  loader.onLoadComplete=function(){scene.add( mesh )} 
 
   render();
   </script>
